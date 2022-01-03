@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <title>Hello</title>
+</head>
+
+<body>
+  <main>
+    <article id="content">
+      <h1>Speed vs. Certainty in A/B Testing</h1>
+      <p>
+        <a href="/article/an-introduction-to-ab-testing">A/B testing</a> is a great tactical tool for studying
+        customer behavior on the web. But like any randomized trial there's some chance that the improvement we
+        measure is just statistical noise.
+      </p>
+      <p>
+        How worried should we be that the feature we thought improved our product actually does nothing, or worse,
+        hurts our bottom line? How can we ever really know that we're making the correct decision? And is it better to
+        run tests more quickly or more accurately?
+      </p>
+      <p>
+        The answers to these questions depend on the cost of a bad decision. If mistakes are cheap then it's better to
+        make 1,000 decisions and get only 60% of them right than to make 100 decisions and get 100% of them right.
+      </p>
+      <p>
+        One way to achieve this balance in the context of A/B testing is to tune the confidence level.
+      </p>
+      <h2>Tuning the Confidence Level</h2>
+      <p>
+        Intuitively, the confidence level of an A/B test tells you how certain you can be of the result of the A/B
+        test. For example, a confidence level of 95% means that there's a 5% chance that a statistically significant
+        result is actually random variation, i.e., there is a 5% chance of a false positive.
+      </p>
+      <p>
+        Of course, we're free to choose some other confidence level besides 95%. We could choose 80%, 90%, or 99.999%.
+        A higher confidence level requires more data before reaching statistical significance, but we will be more
+        certain of the result.
+      </p>
+      <p>
+        If you're not comfortable with the nuts and bolts of statistical analysis, confidence levels, and A/B testing
+        I recommend reading my article about <a href="/article/statistical-analysis-and-ab-testing">statistical
+          analysis and A/B testing</a>, which explains exactly how one "chooses" a confidence level.
+      </p>
+      <p>
+        In short, the confidence level acts as a dial between speed and certainty, and we're free to choose where to
+        set that dial depending on the priorities of our business or product.
+      </p>
+      <h2>Speed vs. Certainty</h2>
+      <p>
+        So where on the speed-certainty spectrum should you, as a product manager or startup entrepreneur, sit?
+      </p>
+      <p>
+        Mike Cassidy has a great presentation where he argues that <a
+          href="http://www.slideshare.net/dmc500hats/best-strategy-is-speed-startup2startup-may-2008">speed is the
+          primary business startegy</a> for startups.
+      </p>
+      <p>
+        Why is speed great for startups? Because mistakes are cheap and calculated risks are rewarded. Most product
+        decisions can be undone, and important early tests can be redone at a higher confidence level when the product
+        has more traction.
+      </p>
+      <p>
+        But mistakes aren't always cheap. Here are some factors that increase the cost of a mistake.
+      </p>
+      <h3>Volume</h3>
+      <p>
+        Volume is leverage. If you have millions of customers, like Google or Amazon, a 1% improvement to the bottom
+        line is a huge win. Conversely, a 1% mistake is a huge hit.
+      </p>
+      <p>
+        Fortunately this problem helps mitigate itself. Increased volume affords you the luxury of running A/B tests
+        at a higher confidence level in the same amount of time.
+      </p>
+      <h3>Reversibility</h3>
+      <p>
+        Most product decisions in a consumer technology startup can be undone, for a price. For example, it's easy to
+        undo a bad decision for a web-based product, slightly harder to undo a decision for desktop software, and very
+        difficult (and costly) to undo a decision for a physical product.
+      </p>
+      <p>
+        The less reversible a decision is the more certain you should be before you make it. In the context of A/B
+        testing a product feature this means a higher confidence level, even if it takes longer to run the test.
+      </p>
+      <h3>Real Money</h3>
+      <p>
+        Imagine you're an ad network. You're constantly A/B testing formatting, positioning, offers, etc. to see which
+        performs best. Making a mistake in this regard costs your publishers money.
+      </p>
+      <p>
+        Like volume, money creates leverage. But it is more complicated than that: publishers don't just want
+        increased revenues, they want reliable cash flow. That is, when money is involved, not only do you have to
+        perform better but you have to perform more consistently because of phenomena like the <a
+          href="http://en.wikipedia.org/wiki/Peak-end_rule">peak-end rule</a>.
+      </p>
+      <p>
+        In this case a "three steps forward one step back" strategy might actually be worse than going step-by-step in
+        the right direction, even if the former averages out to better performance.
+      </p>
+      <h2>Conclusions</h2>
+      <p>
+        Maintaining momentum in a startup isn't about making <em>only</em> correct decisions — it's about making
+        <em>enough</em> correct decisions. This presents a continuum from speed to certainty. At one extreme you run
+        the business with a magic eight-ball; at the other you agonize over every detail until you're 100% certain
+        that you've made the correct choice.
+      </p>
+      <p>
+        This thought process extends naturally to A/B testing where the idea of "certainty" and "cost" can be
+        quantified. To recap:
+      </p>
+      <ul>
+        <li>A/B testing is a great tactical tool for testing <em>specific</em> hypotheses about your customers.</li>
+        <li>However, there is a tradeoff between speed and certainty, controlled by the confidence level of the A/B
+          test.</li>
+        <li>The cost of doing A/B tests quickly is that you will make more wrong decisions, but that is ok if mistakes
+          are cheap.</li>
+        <li>For example, it's better to make 1,000 decisions and get only 60% of them right than to make 100 decisions
+          and get 100% of them right, all else being equal.</li>
+      </ul>
+      <h2>A Spreadsheet Model</h2>
+      <p>
+        Below is a little spreadsheet model that illustrates all my points above.
+      </p>
+      <p>
+        The two independent variables are the gain from a good decision and the cost of a bad decision. The
+        spreadsheet assumes a fixed time period, so a higher confidence level means more certainty but <strong>fewer
+          tests</strong>. The ideal confidence level is highlighted as you change the parameters of the model.
+      </p>
+      <p>
+        You can download <a href="http://assets.20bits.com/downloads/confidence-model.xls">the A/B testing confidence
+          model</a> here.
+      </p>
+      <p>
+        For the statistically inclined this model assumes that traffic increases linearly over time, that the sample
+        statistic is normally distributed, and that a one-tailed t-test is the appropriate statistical test.
+      </p>
+      <h2>Credits</h2>
+      <p>
+        This article was inspired by a conversation with <a href="http://startup-marketing.com/">Sean Ellis</a> and
+        edited by my <a href="http://twitter.com/aleeeex">wonderful girlfriend</a>, who is probably going to yell at
+        me for linking to her Twitter account.
+      </p>
+
+    </article>
+  </main>
+</body>
+
+</html>
