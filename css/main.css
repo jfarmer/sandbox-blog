@@ -1,44 +1,76 @@
 :root {
-  --font-size: 1rem;
-  --ratio: 1.333;
-  --h4: calc(var(--font-size) * var(--ratio));
-  --h3: calc(var(--h4) * var(--ratio));
-  --h2: calc(var(--h3) * var(--ratio));
-  --h1: calc(var(--h2) * var(--ratio));
+  font-size: 8px;
+  --baseline: calc(8 * 1px);
+  /* This is our baseline */
+  /* --base-line-height: calc(var(--baseline) * 2); */
+  --base-line-height: 1rem;
+  /* Base line height is a multiple of the baseline */
+  --base-font-size: calc(1 * 16px);
+  --baseline-1: var(--baseline);
+  --baseline-2: calc(var(--baseline) * 2);
+  --baseline-3: calc(var(--baseline) * 3);
+  --baseline-4: calc(var(--baseline) * 4);
+  --baseline-5: calc(var(--baseline) * 5);
+  --baseline-6: calc(var(--baseline) * 6);
+  --baseline-7: calc(var(--baseline) * 7);
+  --baseline-8: calc(var(--baseline) * 8);
+  --baseline-9: calc(var(--baseline) * 9);
+  --baseline-10: calc(var(--baseline) * 10);
 }
 
+/* main #content {
+  background-image: linear-gradient(#f00 1px, transparent 1px);
+  background-size: auto 1rem;
+} */
+
 body {
-  font-size: 18px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  line-height: 1.5;
-  color: #383838;
+  font-size: 2rem;
+  line-height: 3rem;
+
+  font-family: 'Times New Roman', Times, serif;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+  color: #0C0C0C;
 }
 
 main #content {
-  max-width: 60ch;
+  max-width: 600px;
   margin: 0 auto;
 }
 
-p, li, h1, h2, h3, h4, h5, h6 {
+h1,h2,h3,h4,h5,h6 {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, dd,
+p, figure,
+pre, table, fieldset, hr {
   overflow-wrap: break-word;
+  margin: 0;
 }
 
-p {
-  font-size: var(--font-size);
-}
-
-h4 {
-  font-size: var(--h4);
-}
-
-h3 {
-  font-size: var(--h3);
-}
-
-h2 {
-  font-size: var(--h2);
+p, li {
+  margin-bottom: 1.5rem;
 }
 
 h1 {
-  font-size: var(--h1);
+  font-size: 8rem;
+  line-height: 8rem;
+  margin-bottom: 3rem;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-size: 5rem;
+  line-height: 5rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+h4 {
+  font-size: var(--h4-font-size);
 }
