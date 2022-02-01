@@ -5,6 +5,30 @@
   /* --base-line-height: calc(var(--baseline) * 2); */
   --base-line-height: 1rem;
   /* Base line height is a multiple of the baseline */
+  --base-font-size: calc(1 * 16px);
+  --baseline-1: var(--baseline);
+  --baseline-2: calc(var(--baseline) * 2);
+  --baseline-3: calc(var(--baseline) * 3);
+  --baseline-4: calc(var(--baseline) * 4);
+  --baseline-5: calc(var(--baseline) * 5);
+  --baseline-6: calc(var(--baseline) * 6);
+  --baseline-7: calc(var(--baseline) * 7);
+  --baseline-8: calc(var(--baseline) * 8);
+  --baseline-9: calc(var(--baseline) * 9);
+  --baseline-10: calc(var(--baseline) * 10);
+}
+
+/* main #content {
+  background-image: linear-gradient(#f00 1px, transparent 1px);
+  background-size: auto 1rem;
+} */
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 body {
@@ -17,24 +41,16 @@ body {
 
 #page {
   display: grid;
-  grid-template-columns:
-    [full-start] minmax(1rem, 1fr)
-    [main-start] minmax(60ch, 80ch) [main-end]
-    minmax(1rem, 1fr) [full-end];
+  grid-template-columns: min(100%, 800px);
   column-gap: 20rem;
   justify-content: center;
 }
 
-#page-content {
-  grid-column: full;
-}
-
-#page-content > article {
-  background-color: green;
-  grid-column: main;
-}
-
 #page-navbar {
+}
+
+main {
+  background-color: white;
 }
 
 
