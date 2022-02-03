@@ -1,0 +1,127 @@
+.ieYALN {
+  display: grid;
+  width: 100%;
+  padding-top: 10rem;
+  padding-bottom: 80px;
+  grid-template-columns: 2rem 1fr 2rem;
+  line-height: 1.6;
+  font-family: var(--text-sans);
+}
+
+/*!sc*/
+.ieYALN>* {
+  grid-column: 2 / span 1;
+  margin-bottom: 1.5em;
+}
+
+/*!sc*/
+.ieYALN>blockquote {
+  border-left: 3px solid var(--gray400);
+  padding-left: 1rem;
+  color: var(--gray600);
+}
+
+/*!sc*/
+.ieYALN>header {
+  margin-bottom: 8rem;
+}
+
+/*!sc*/
+.ieYALN>.layouts__Meta-sc-1b8y1a3-4 {
+  margin-bottom: 64px;
+}
+
+/*!sc*/
+.ieYALN>figure {
+  margin-top: calc(3rem - 1.5em);
+  margin-bottom: 3rem;
+  max-width: 100vw;
+}
+
+/*!sc*/
+.ieYALN>.layouts__CodeBlockWrapper-sc-1b8y1a3-0 {
+  margin-top: 24px;
+  margin-bottom: 48px;
+  grid-column: 1 / -1;
+  max-width: 100vw;
+}
+
+/*!sc*/
+.ieYALN>.layouts__CodeBlockWrapper-sc-1b8y1a3-0>pre {
+  border-radius: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+}
+
+/*!sc*/
+@media screen and (min-width:768px) {
+  .ieYALN>.layouts__CodeBlockWrapper-sc-1b8y1a3-0 {
+    grid-column: 5 / span 1;
+  }
+
+  .ieYALN>.layouts__CodeBlockWrapper-sc-1b8y1a3-0>pre {
+    border-radius: 6px;
+    border-right-width: 2px;
+    border-left-width: 2px;
+  }
+}
+
+/*!sc*/
+.ieYALN>.ThematicBreak-sc-1xkuzpk-0 {
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+
+/*!sc*/
+.ieYALN>.Heading-sc-klsggy-0 {
+  margin-top: 80px;
+  margin-bottom: 32px;
+}
+
+/*!sc*/
+.ieYALN>.Subheading-sc-b79qm6-0 {
+  margin-top: 32px;
+  margin-bottom: 24px;
+}
+
+/*!sc*/
+.ieYALN>.ProblemStatement-sc-1koh056-0 {
+  margin-bottom: 48px;
+}
+
+/*!sc*/
+.ieYALN>.full-width, .ieYALN>.full-width-2x, .ieYALN>.full-width-3x {
+  grid-column: 1 / -1;
+}
+
+/*!sc*/
+@media screen and (min-width:770px) {
+  .ieYALN {
+    grid-template-columns:
+      1fr
+      minmax(0, 6rem)
+      minmax(0, 4rem)
+      2rem
+      min(65ch, calc(100% - 2rem))
+      2rem
+      minmax(0, 4rem)
+      minmax(0, 6rem)
+      1fr;
+  }
+
+  .ieYALN>* {
+    grid-column: 5 / span 1;
+  }
+
+  .ieYALN>.full-width {
+    grid-column: 4 / -4;
+  }
+
+  .ieYALN>.full-width-2x {
+    grid-column: 3 / -3;
+  }
+
+  .ieYALN>.full-width-3x {
+    grid-column: 2 / -2;
+  }
+}

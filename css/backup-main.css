@@ -25,6 +25,8 @@
 
 html {
   box-sizing: border-box;
+  -moz-tab-size: 4;
+	tab-size: 4;
 }
 
 *, *::before, *::after {

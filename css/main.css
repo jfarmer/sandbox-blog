@@ -1,46 +1,39 @@
 :root {
-  font-size: 8px;
-  --baseline: calc(8 * 1px);
-  /* This is our baseline */
-  /* --base-line-height: calc(var(--baseline) * 2); */
-  --base-line-height: 1rem;
-  /* Base line height is a multiple of the baseline */
+  font-size: 16px;
+
+  --font-size-base: 1rem;
+  --font-size-large: 1.25rem;
+  --font-size-xlarge: 1.5rem;
+  --font-size-xxlarge: 1.875rem;
+}
+
+html {
+  box-sizing: border-box;
+  -moz-tab-size: 4;
+  tab-size: 4;
 }
 
 body {
-  font-size: 2rem;
-  line-height: 3.25rem;
+  font-size: 1rem;
+  line-height: 1.625;
   background-color: #F0F0F0;
-  font-family: pt-serif, serif;
+  font-family: pt-sans, serif;
   color: #0C0C0C;
 }
 
-#page {
-  display: grid;
-  grid-template-columns:
-    [full-start] minmax(1rem, 1fr)
-    [main-start] minmax(60ch, 80ch) [main-end]
-    minmax(1rem, 1fr) [full-end];
-  column-gap: 20rem;
-  justify-content: center;
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
-#page-content {
-  grid-column: full;
-}
-
-#page-content > article {
-  background-color: green;
-  grid-column: main;
-}
-
-#page-navbar {
-}
+/* main #page-content {
+  background-image: linear-gradient(#f00 1px, transparent 1px);
+  background-size: auto calc(1.625rem - 0px);
+} */
 
 
 h1,h2,h3,h4,h5,h6 {
-  font-family: Arial, sans-serif;
-  letter-spacing: -1px;
+  font-family: pt-serif, Arial, sans-serif;
+  /* letter-spacing: -1px; */
 }
 
 h1, h2, h3, h4, h5, h6, hgroup,
@@ -52,36 +45,48 @@ pre, table, fieldset, hr {
   -webkit-font-smoothing: antialiased;
 }
 
-p, li {
-  margin-bottom: 1.25rem;
+#page-content {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    1rem
+    [content-start] min(70ch, calc(100% - 2rem)) [content-end]
+    1rem
+    minmax(0, 1fr);
+  width: 100%;
 }
 
-h1 {
-  font-size: 5rem;
-  line-height: 5rem;
-  margin-bottom: 3rem;
+#page-content > * {
+  grid-column: content;
+  margin-bottom: 0.8125rem;
 }
 
-h2 {
-  font-size: 5rem;
-  line-height: 5rem;
+#page-content h1 {
+  font-size: 2rem;
+  line-height: 2rem;
   margin-bottom: 2rem;
 }
 
-* + h2 {
-  margin-top: 4rem;
-}
-
-h3 {
-  font-size: 3rem;
-  line-height: 3rem;
+#page-content h2 {
+  font-size: 2rem;
+  line-height: 2rem;
   margin-bottom: 1rem;
+
+  border-left: 4px solid blue;
+  padding-left: 8px;
+  margin-left: -14px;
 }
 
-* + h3 {
+#page-content * + h2 {
   margin-top: 2rem;
 }
 
-h4 {
-  font-size: var(--h4-font-size);
+#page-content h3 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#page-content * + h3 {
+  margin-top: 1.5rem;
 }
